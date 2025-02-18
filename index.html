@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VSC - Visual Studio Crime">
+    <title>CodeWarCrimes</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/php/php.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-section">
+            <label for="inputCode">Kod wejściowy:</label>
+            <!-- Divy dla edytorów CodeMirror -->
+            <div id="inputCode" class="editor"></div>
+            <button onclick="openFile()">Otwórz plik</button>
+            <button onclick="loadExampleCode()">Przykładowy kod</button>
+        </div>
+
+        <div class="options-section">
+            <h1>Visual Studio Crimes</h1>
+            <label for="language">Wybierz język:</label>
+            <select id="language" onchange="updateEffects(); updateLanguageMode(); updateCompilerButton();">
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="PHP">PHP</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+            </select>
+            <label>Efekty:</label>
+            <div id="effectsContainer">
+                <!-- Lista efektów generowana dynamicznie -->
+            </div>
+            <div class="buttons-container">
+                <button id="compilerButton" onclick="openCompiler()">Kompilator online (Python)</button>
+                <button onclick="convertCode()">Konwertuj kod</button>
+            </div>
+        </div>
+
+        <div class="output-section">
+            <label for="outputCode">Kod wyjściowy:</label>
+            <div id="outputCode" class="editor"></div>
+            <button onclick="copyToClipboard()">Kopiuj do schowka</button>
+            <button onclick="downloadCode()">Pobierz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

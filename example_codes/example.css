@@ -1,0 +1,23 @@
+/* Przykładowy kod CSS */
+h1 {
+	color: blue;
+	font-family: Arial, sans-serif;
+}
+
+button {
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+ul {
+	list-style-type: square;
+	color: darkred;
+}
