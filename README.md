@@ -1,2 +1,2 @@
 # VSC
-Visual Studio Crimes
+[Visual Studio Crimes](https://matik13.github.io/VSC/)
